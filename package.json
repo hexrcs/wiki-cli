@@ -1,0 +1,68 @@
+{
+  "name": "wiki-cli",
+  "version": "0.0.1",
+  "description": "Get instant answers from your terminal!",
+  "bin": {
+    "wiki": "./bin/wiki"
+  },
+  "scripts": {
+    "postinstall": "tsc",
+    "watch": "tsc -w",
+    "debug": "node --inspect=0.0.0.0:13579 --nolazy -r ts-node/register ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hexrcs/wiki-cli.git"
+  },
+  "keywords": [
+    "search",
+    "cli",
+    "answers",
+    "search-engine",
+    "google",
+    "terminal"
+  ],
+  "author": "Xiaoru Li",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hexrcs/wiki-cli/issues"
+  },
+  "homepage": "https://github.com/hexrcs/wiki-cli#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "got": "^9.6.0",
+    "ink": "^2.3.0",
+    "ink-big-text": "^1.0.1",
+    "ink-box": "^1.0.0",
+    "ink-gradient": "^1.0.0",
+    "ink-spinner": "^3.0.1",
+    "ink-text-input": "^3.2.0",
+    "lodash": "^4.17.14",
+    "minimist": "^1.2.0",
+    "mobx": "^5.11.0",
+    "mobx-react-lite": "^1.4.1",
+    "open": "^6.4.0",
+    "react": "^16.8.6",
+    "terminal-image": "^0.2.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2",
+    "wtf_wikipedia": "^7.4.2"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.12",
+    "@types/got": "^9.6.0",
+    "@types/ink": "^0.5.1",
+    "@types/lodash": "^4.14.136",
+    "@types/minimist": "^1.2.0",
+    "@types/node": "^12.0.10",
+    "@types/react": "^16.8.22",
+    "eslint": "^6.0.1",
+    "husky": "^2.7.0",
+    "ink-testing-library": "^1.0.2",
+    "jest": "^24.8.0",
+    "jest-serializer-ansi": "^1.0.3",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "ts-jest": "^24.0.2"
+  }
+}

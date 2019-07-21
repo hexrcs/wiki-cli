@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+const { spawnSync } = require("child_process");
+const { resolve } = require("path");
+
+const args = process.argv.splice(2).join(" ");
+const cmd = `node --no-warnings ${resolve(__dirname, "../dist/index.js")} ${args}`;
+spawnSync(cmd, { stdio: "inherit", shell: true });
