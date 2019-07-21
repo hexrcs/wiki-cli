@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { Text, Box } from "ink";
 import { Key } from "readline";
+import { observer } from "mobx-react-lite";
 import { StoreContext, Store } from "../../store";
 import { useKeypress } from "../../hooks/useKeypress";
 import { CTRL_C } from "../../keys";
 
-export const Footer = () => {
+export const Footer = observer(() => {
   const store = useContext(StoreContext);
   useKeypress((_?: string, key?: Key) => handleKeypress(store, _, key));
 
@@ -23,7 +24,7 @@ export const Footer = () => {
       <Text bold>{hint}</Text>
     </Box>
   );
-};
+});
 
 function handleKeypress(store: Store, _?: string, key?: Key) {
   if (!key) return;
