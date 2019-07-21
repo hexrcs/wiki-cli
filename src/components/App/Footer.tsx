@@ -21,7 +21,9 @@ export const Footer = observer(() => {
 
   return (
     <Box marginY={1}>
-      <Text bold>{hint}</Text>
+      <Color gray>
+        <Text bold>{hint}</Text>
+      </Color>
     </Box>
   );
 });

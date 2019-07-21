@@ -15,7 +15,7 @@ export const Details = observer(() => {
 
   return (
     <Box flexDirection="column" marginY={1}>
-      <InkBox borderStyle="classic">
+      <InkBox borderStyle="double">
         <Text bold>{store.article.title}</Text>
       </InkBox>
       <Box textWrap="wrap" marginTop={1}>
