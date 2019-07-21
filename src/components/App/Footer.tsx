@@ -16,11 +16,11 @@ export const Footer = observer(() => {
   } else if (store.results.length > 0) {
     hint = `Press ENTER to read article summary`;
   } else {
-    hint = `Welcome to wiki-cli!`;
+    hint = ``;
   }
 
   return (
-    <Box marginY={1} marginX={4}>
+    <Box marginY={1}>
       <Text bold>{hint}</Text>
     </Box>
   );
