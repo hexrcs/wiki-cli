@@ -48,6 +48,7 @@ declare module "ink-box" {
     | "single"
     | "double"
     | "round"
+    | "bold"
     | "singleDouble"
     | "doubleSingle"
     | "classic";
