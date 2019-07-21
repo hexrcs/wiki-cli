@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Box } from "ink";
 import { Key } from "readline";
-import open from "open";
 import { ENTER, ARROW_DOWN, ARROW_UP } from "../../../keys";
 
 import { useKeypress } from "../../../hooks/useKeypress";
