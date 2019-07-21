@@ -88,8 +88,11 @@ export class Store {
   isDetailsOpen: boolean = false;
   @action
   toggleDetails = () => {
-    if (this.results.length > 0) {
-      this.isDetailsOpen = !this.isDetailsOpen;
+    if (this.isDetailsOpen) {
+      this.isDetailsOpen = false;
+    } else if (this.results.length > 0) {
+      this.updateArticle();
+      this.isDetailsOpen = true;
     }
   };
 
