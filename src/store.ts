@@ -1,5 +1,5 @@
 import { observable, computed, action } from "mobx";
-import { SearchError, fetchSearchResults, Page } from "./api";
+import { SearchError, fetchSearchResults, Page, Article, fetchArticle } from "./api";
 import { DEFAULT_LANGUAGE } from "./consts";
 import { createContext } from "react";
 import debounce from "lodash/debounce";
@@ -47,19 +47,41 @@ export class Store {
       this.selectedIndex = index;
     }
   };
-
-  // results
-  @observable
-  results: Page[] = [];
+  @computed
+  get selectedPageID(): number {
+    return this.results[this.selectedIndex].pageid;
+  }
   @computed
   get selectedURL(): string {
     if (this.selectedIndex >= 0 && this.results.length > this.selectedIndex) {
-      const { pageid } = this.results[this.selectedIndex];
-      return `https://${this.lang}.wikipedia.org/?curid=${pageid}`;
+      return `https://${this.lang}.wikipedia.org/?curid=${this.selectedPageID}`;
     } else {
       return "";
     }
   }
+  @computed
+  get selectedTitle(): string {
+    return this.results[this.selectedIndex].title;
+  }
+
+  // article
+  @observable
+  article: Article = { type: "Article", title: "", summary: "" };
+  @action
+  updateArticle = async () => {
+    this.article.title = this.selectedTitle;
+    this.article.summary = "Loading...";
+    const article = await fetchArticle(this.selectedPageID);
+    if (article.type === "SearchError") {
+      this.article.summary = article.reason;
+    } else {
+      this.article.summary = article.summary;
+    }
+  };
+
+  // results
+  @observable
+  results: Page[] = [];
 
   // isDetailsOpen
   @observable
