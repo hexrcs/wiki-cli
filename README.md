@@ -11,14 +11,8 @@ npm i -g wiki-cli
 # Then, just call `wiki` alone to enter the interactive mode...
 wiki
 
-# ... or, directly with keywords you'd like to search for...
-wiki Jesus nut
-
 # You can read the not so helpful help page with option `-h` or `--help`...
 wiki -h
-
-# ... or, specify the locale with `-l` or `--lang`
-wiki -l de Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz
 ```
 
 ## Why
