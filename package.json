@@ -2,6 +2,7 @@
   "name": "wiki-cli",
   "version": "0.0.1",
   "description": "Get instant answers from your terminal!",
+  "preferGlobal": true,
   "bin": {
     "wiki": "./bin/wiki"
   },
