@@ -53,12 +53,12 @@ declare module "ink-box" {
     | "classic";
 
   type borderStyleObject = {
-    topLeft?: string;
-    topRight?: string;
-    bottomLeft?: string;
-    bottomRight?: string;
-    horizontal?: string;
-    vertical?: string;
+    topLeft: string;
+    topRight: string;
+    bottomLeft: string;
+    bottomRight: string;
+    horizontal: string;
+    vertical: string;
   };
 
   type whiteSpace = {
