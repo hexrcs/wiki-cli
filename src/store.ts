@@ -9,8 +9,8 @@ export class Store {
   @observable
   input: string = "";
   @action
-  updateInputs = (keywords: string) => {
-    this.input = keywords;
+  updateInputs = (value: string) => {
+    this.input = value;
     this.debouncedSearch();
   };
   @action
