@@ -1,5 +1,5 @@
 import { observable, computed, action } from "mobx";
-import { SearchError, fetchSearchResults, Page } from "./fetch";
+import { SearchError, fetchSearchResults, Page } from "./api";
 import { DEFAULT_LANGUAGE } from "./consts";
 import { createContext } from "react";
 import debounce from "lodash/debounce";
