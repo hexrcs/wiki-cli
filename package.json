@@ -1,16 +1,21 @@
 {
   "name": "wiki-cli",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Search Wikipedia and read summaries directly in your terminal!",
   "preferGlobal": true,
   "bin": {
     "wiki": "./bin/wiki"
   },
   "scripts": {
-    "postinstall": "tsc",
+    "prepare": "npm run build",
+    "build": "tsc",
     "watch": "tsc -w",
     "debug": "node --inspect=0.0.0.0:13579 --nolazy -r ts-node/register ./src/index.ts"
   },
+  "files": [
+    "dist/**/*",
+    "bin/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/hexrcs/wiki-cli.git"

@@ -11,7 +11,7 @@ export const Help = () => {
       </Gradient>
       <Box>
         <Color blue>
-          <Text bold>v0.0.1</Text>
+          <Text bold>v0.0.3</Text>
         </Color>
       </Box>
       <Box margin={1}>
