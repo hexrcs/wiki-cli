@@ -25,6 +25,8 @@ See TODO tags in the source code.
 
 Also need to write some more docs.
 
+Also I need to stop saying also's.
+
 ## License
 
 GPL-3.0
