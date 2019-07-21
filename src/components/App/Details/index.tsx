@@ -36,4 +36,8 @@ function handleKeypress(store: Store, _?: string, key?: Key) {
       store.toggleDetails();
       break;
   }
+
+  if (key.name === "q") {
+    store.toggleDetails();
+  }
 }

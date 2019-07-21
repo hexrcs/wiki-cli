@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Text, Box } from "ink";
+import { Text, Box, Color } from "ink";
 import { Key } from "readline";
 import { observer } from "mobx-react-lite";
 import { StoreContext, Store } from "../../store";
@@ -12,7 +12,7 @@ export const Footer = observer(() => {
 
   let hint;
   if (store.isDetailsOpen) {
-    hint = `Press ENTER to open article in browser`;
+    hint = `Press ENTER to open article in browser, ESC or Q to return to search`;
   } else if (store.results.length > 0) {
     hint = `Press ENTER to read article summary`;
   } else {
@@ -31,7 +31,7 @@ export const Footer = observer(() => {
 function handleKeypress(store: Store, _?: string, key?: Key) {
   if (!key) return;
 
-  if (key.sequence == CTRL_C) {
+  if (key.sequence === CTRL_C) {
     store.isCleanUpTime = true;
     process.exit(0);
   }
