@@ -18,5 +18,5 @@ export function useKeypress(keypressHandler: (str?: string, key?: Key) => void) 
       stdin.off("keypress", keypressHandler);
       setRawMode && setRawMode(false);
     };
-  }, [stdin, setRawMode]);
+  }, [stdin, setRawMode, keypressHandler]);
 }
