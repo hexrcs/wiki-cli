@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
-import { Box, Text } from "ink";
+import { Box, Text, useInput } from "ink";
 import InkBox from "ink-box";
 import { Key } from "readline";
 import { observer } from "mobx-react-lite";
 import open from "open";
 
 import { ENTER, ESC } from "../../../keys";
-import { useKeypress } from "../../../hooks/useKeypress";
 import { StoreContext, Store } from "../../../store";
 
 export const Details = observer(() => {
   const store = useContext(StoreContext);
-  useKeypress((_?: string, key?: Key) => handleKeypress(store, _, key));
+  useInput((_?: string, key?: Key) => handleKeypress(store, _, key));
 
   return (
     <Box flexDirection="column" marginY={1}>

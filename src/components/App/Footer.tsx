@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
-import { Text, Box, Color } from "ink";
+import { Text, Box, Color, useInput } from "ink";
 import { Key } from "readline";
 import { observer } from "mobx-react-lite";
 import { StoreContext, Store } from "../../store";
-import { useKeypress } from "../../hooks/useKeypress";
 import { CTRL_C } from "../../keys";
 
 export const Footer = observer(() => {
   const store = useContext(StoreContext);
-  useKeypress((_?: string, key?: Key) => handleKeypress(store, _, key));
+  useInput((_?: string, key?: Key) => handleKeypress(store, _, key));
 
   let hint;
   if (store.isDetailsOpen) {
