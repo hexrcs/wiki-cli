@@ -15,7 +15,7 @@ export const Footer = observer(() => {
   } else if (store.results.length > 0) {
     hint = `Press ENTER to read article summary`;
   } else {
-    hint = ``;
+    hint = ` `;
   }
 
   return (

@@ -34,14 +34,14 @@ const ResultCard = (props: { result: Page; i: number; isSelected: boolean }) => 
       <Box flexDirection="column">
         {props.isSelected ? (
           <Color bgGreen white>
-            <Text bold>{props.result.title}</Text>
+            <Text bold>{props.result.title} </Text>
           </Color>
         ) : (
           <Color green>
-            <Text bold>{props.result.title}</Text>
+            <Text bold>{props.result.title} </Text>
           </Color>
         )}
-        <Box textWrap={"wrap"}>{props.result.description}</Box>
+        <Box textWrap={"wrap"}>{props.result.description} </Box>
       </Box>
     </Box>
   );
