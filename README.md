@@ -17,15 +17,7 @@ wiki -h
 
 ## Why
 
-Cuz Ink is awesome, React is fun, and JavaScript is everywhere. Also it's a demo app for my CLI talk. And, who doesn't love Wikipedia?
-
-## Todo
-
-See TODO tags in the source code.
-
-Also need to write some more docs.
-
-Also I need to stop saying also's.
+I love CLI, and Ink is awesome! ;)
 
 ## License
 
