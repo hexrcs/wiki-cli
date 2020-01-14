@@ -1,13 +1,18 @@
 import React, { useContext } from "react";
 import { Text, Box, Color, useInput } from "ink";
-import { Key } from "readline";
 import { observer } from "mobx-react-lite";
 import { StoreContext, Store } from "../../store";
-import { CTRL_C } from "../../keys";
 
 export const Footer = observer(() => {
   const store = useContext(StoreContext);
-  useInput((_?: string, key?: Key) => handleKeypress(store, _, key));
+  useInput((input, key) => {
+    if (!key) return;
+
+    if (input === "c") {
+      store.isCleanUpTime = true;
+      process.exit(0);
+    }
+  });
 
   let hint;
   if (store.isDetailsOpen) {
@@ -26,12 +31,3 @@ export const Footer = observer(() => {
     </Box>
   );
 });
-
-function handleKeypress(store: Store, _?: string, key?: Key) {
-  if (!key) return;
-
-  if (key.sequence === CTRL_C) {
-    store.isCleanUpTime = true;
-    process.exit(0);
-  }
-}

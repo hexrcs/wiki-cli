@@ -1,15 +1,22 @@
 import React, { useContext } from "react";
 import { Box, useInput } from "ink";
-import { Key } from "readline";
-import { ENTER, ARROW_DOWN, ARROW_UP } from "../../../keys";
-
-import { StoreContext, Store } from "../../../store";
+import { StoreContext } from "../../../store";
 import { ResultsList } from "../Main/ResultsList";
 import { SearchBar } from "../Main/SearchBar";
 
 export const Main = () => {
   const store = useContext(StoreContext);
-  useInput((_?: string, key?: Key) => handleKeypress(store, _, key));
+  useInput((_, key) => {
+    if (!key) return;
+
+    if (key.upArrow) {
+      store.selectPrev();
+    } else if (key.downArrow) {
+      store.selectNext();
+    } else if (key.return) {
+      store.toggleDetails();
+    }
+  });
 
   return (
     <Box flexDirection={"column"}>
@@ -18,19 +25,3 @@ export const Main = () => {
     </Box>
   );
 };
-
-function handleKeypress(store: Store, _?: string, key?: Key) {
-  if (!key) return;
-
-  switch (key.sequence) {
-    case ARROW_UP:
-      store.selectPrev();
-      break;
-    case ARROW_DOWN:
-      store.selectNext();
-      break;
-    case ENTER:
-      store.toggleDetails();
-      break;
-  }
-}
