@@ -1,6 +1,6 @@
 {
   "name": "wiki-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Search Wikipedia and read summaries directly in your terminal!",
   "preferGlobal": true,
   "bin": {
