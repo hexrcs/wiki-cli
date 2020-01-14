@@ -7,7 +7,7 @@ import { DEFAULT_LANGUAGE } from "./consts";
 
 main();
 
-async function main() {
+function main() {
   const argv: ParsedArgs = parseArgs(process.argv.slice(2), {
     boolean: ["help"],
     string: ["lang"],
