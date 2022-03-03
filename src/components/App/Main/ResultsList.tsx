@@ -23,7 +23,7 @@ const ResultCard = (props: { result: Page; i: number; isSelected: boolean }) => 
       <Box width={2} marginX={1} flexDirection={"row-reverse"}>
         {props.isSelected ? (
           <Color green>
-            <Text bold>>> </Text>
+            <Text bold>{">>"} </Text>
           </Color>
         ) : (
           <Color green>

@@ -4,7 +4,7 @@
   "description": "Search Wikipedia and read summaries directly in your terminal!",
   "preferGlobal": true,
   "bin": {
-    "wiki": "./bin/wiki"
+    "wiki": "bin/wiki"
   },
   "scripts": {
     "prepare": "npm run build",
@@ -71,5 +71,6 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "ts-jest": "^24.3.0"
-  }
+  },
+  "main": "index.js"
 }

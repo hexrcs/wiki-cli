@@ -14,7 +14,7 @@ export const App = observer((props: { keywords: string; hl: string }) => {
   }, []);
 
   if (store.isCleanUpTime) {
-    return <Box marginY={1}>Have a nice day! :D</Box>;
+    return <Box marginY={1}>Wiki-cli closed</Box>;
   } else {
     return (
       <Box flexDirection={"column"}>

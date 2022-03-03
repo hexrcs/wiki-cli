@@ -5,15 +5,6 @@ import { StoreContext, Store } from "../../store";
 
 export const Footer = observer(() => {
   const store = useContext(StoreContext);
-  useInput((input, key) => {
-    if (!key) return;
-
-    if (input === "c") {
-      store.isCleanUpTime = true;
-      process.exit(0);
-    }
-  });
-
   let hint;
   if (store.isDetailsOpen) {
     hint = `Press ENTER to open article in browser, ESC or Q to return to search`;

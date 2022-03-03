@@ -16,6 +16,11 @@ export const Main = () => {
     } else if (key.return) {
       store.toggleDetails();
     }
+
+    if (key.escape) {
+      store.isCleanUpTime = true;
+      process.exit(0);
+    }
   });
 
   return (
