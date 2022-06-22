@@ -38,7 +38,7 @@
   "homepage": "https://github.com/hexrcs/wiki-cli#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "got": "^10.2.2",
+    "got": "^11.8.5",
     "ink": "^2.6.0",
     "ink-big-text": "^1.0.1",
     "ink-box": "^1.0.0",
